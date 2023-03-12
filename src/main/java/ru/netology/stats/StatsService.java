@@ -13,12 +13,7 @@ public class StatsService {
     }
 
     public int MiddleSales(long sales[]) {
-        int amount = 0;
-
-        for (int i = 0; i < sales.length; i++) {
-            amount += sales[i];
-        }
-
+        int amount = SalesAmount(sales);
         int middle = amount / 12;
 
         return middle;
@@ -49,13 +44,7 @@ public class StatsService {
     }
 
     public int LessThanMiddle(long[] sales) {
-        int amount = 0;
-
-        for (int i = 0; i < sales.length; i++) {
-            amount += sales[i];
-        }
-
-        int middle = amount / 12;
+        int middle = MiddleSales(sales);
         int lessMonths = 0;
 
         for (int i = 0; i < sales.length; i++) {
@@ -68,13 +57,7 @@ public class StatsService {
     }
 
     public int MoreThanMiddle(long[] sales) {
-        int amount = 0;
-
-        for (int i = 0; i < sales.length; i++) {
-            amount += sales[i];
-        }
-
-        int middle = amount / 12;
+        int middle = MiddleSales(sales);
         int MoreMonths = 0;
 
         for (int i = 0; i < sales.length; i++) {
